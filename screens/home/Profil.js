@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     borderWidth: 1,
     borderColor: '#D6DBDF',
-    height: 75,
+    height: 60,
     borderRadius: 10,
   },
   footerbody: {
