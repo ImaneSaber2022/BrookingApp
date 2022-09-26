@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     padding: 10,
     marginTop: 10,
   },
-  body: {marginRight: 10, marginLeft: 100},
+  body: {alignItems: 'center', flex: 1},
   footerBadge: {
     width: 60,
     height: 30,

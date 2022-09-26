@@ -10,9 +10,10 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import {TICKET} from '../../data/Data';
-
+import {Calendar} from 'react-native-calendars';
 const Ticky = ({navigation}) => {
   const [show, setShow] = useState(true);
+  const [modal, setModal]= useState(false)
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -44,11 +45,13 @@ const Ticky = ({navigation}) => {
                 <Entypo name="chevron-small-right" size={20} color="gray" />
               </View>
             </TouchableOpacity>
+            
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => setModal(!modal)}>
             <AntDesign name="calendar" size={20} color={'gray'} />
           </TouchableOpacity>
         </View>
+        {modal && <Calendar />}
 
         <View style={{marginTop: 30}}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>

@@ -65,20 +65,24 @@ const ChooseTheTicky = ({navigation}) => {
           ))}
         </ScrollView>
       </View>
-      <BadgeTicket />
-      <View style={styles.footer}>
-        <View style={styles.footertext}>
-          <View>
-            <Text style={{fontSize: 15, fontWeight: 'bold'}}>$75.11</Text>
-            <Text style={styles.footerbody}>You're goingl +1</Text>
-          </View>
-          <TouchableOpacity
-            onPress={() => navigation.push('Filters')}
-            style={styles.footerstyle}>
-            <View style={styles.row}>
-              <Text style={{color: '#fff', fontWeight: 'bold'}}>Register</Text>
+      <View style={styles.button}>
+        <BadgeTicket />
+        <View style={styles.footer}>
+          <View style={styles.footertext}>
+            <View>
+              <Text style={{fontSize: 15, fontWeight: 'bold'}}>$75.11</Text>
+              <Text style={styles.footerbody}>You're goingl +1</Text>
             </View>
-          </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.push('Filters')}
+              style={styles.footerstyle}>
+              <View style={styles.row}>
+                <Text style={{color: '#fff', fontWeight: 'bold'}}>
+                  Register
+                </Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
@@ -93,9 +97,8 @@ const styles = StyleSheet.create({
   },
   footer: {
     backgroundColor: 'white',
-    height: 80,
-    borderRadius: 10,
-    padding: 20,
+    height: 65,
+    padding: 15,
   },
   row: {
     justifyContent: 'center',
@@ -108,6 +111,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#ffffff',
     marginLeft: 5,
+  },
+  button: {
+    padding: 8,
+    backgroundColor: 'white',
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    marginTop: 5,
+    flex: 1,
   },
   bodyticket: {
     justifyContent: 'center',
@@ -136,7 +147,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#5766c7',
   },
-  title: {marginRight: 10, marginLeft: 100},
+  title: {alignItems: 'center', flex: 1},
   titletext: {fontSize: 17, fontWeight: 'bold'},
   body: {
     flex: 1,

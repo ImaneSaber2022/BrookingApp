@@ -42,7 +42,7 @@ export default Collections;
 
 const styles = StyleSheet.create({
   container: {flex: 1},
-  header: {height: '100%'},
+  header: {height: 310},
   img: {width: '100%', height: '46%', borderRadius: 12},
   text: {fontSize: 15, fontWeight: 'bold'},
   body: {

@@ -4,12 +4,12 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  Image
+  Image,
 } from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
-import imgeGoogle from '../assestes/images/imgeGoogle.png'
+import imgeGoogle from '../assestes/images/imgeGoogle.png';
 const SignUpScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -52,23 +52,21 @@ const SignUpScreen = ({navigation}) => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity style={styles.button}onPress={() => navigation.push('TabsProfil')} >
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.push('TabsProfil')}>
           <Text style={styles.buttonText}>Sign Up </Text>
         </TouchableOpacity>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <View
-            style={styles.body}
-          />
+          <View style={styles.body} />
           <View style={{marginTop: 15}}>
             <Text>Or</Text>
           </View>
-          <View
-            style={styles.body}
-          />
+          <View style={styles.body} />
         </View>
         <View style={{marginTop: 30}}>
           <TouchableOpacity style={styles.buttonWeb}>
-          <Image  source={imgeGoogle} style={styles.img}/>
+            <Image source={imgeGoogle} style={styles.img} />
             <Text>Sign In with Google</Text>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.buttonWeb, {marginTop: 10}]}>
@@ -76,9 +74,13 @@ const SignUpScreen = ({navigation}) => {
             <Text>Sign In with Applle</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={{marginTop:40}}>
-                <Text style={{color: '#6BB0F5',fontWeight:'bold',fontSize:15}}>Sign In</Text>
-              </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={{marginTop: 40}}>
+          <Text style={{color: '#6BB0F5', fontWeight: 'bold', fontSize: 15}}>
+            Sign In
+          </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -94,13 +96,13 @@ const styles = StyleSheet.create({
   header: {
     alignItems: 'center',
   },
-  body:{
+  body: {
     borderBottomColor: '#00000029',
     borderBottomWidth: 1,
     width: '30%',
     right: 5,
   },
-  img:{ width:20,height:28},
+  img: {width: 20, height: 28},
   IconsHeader: {
     marginTop: 10,
     left: 10,

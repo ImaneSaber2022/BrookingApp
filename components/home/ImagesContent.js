@@ -55,8 +55,10 @@ const styles = StyleSheet.create({
   text: {color: '#5766c7', fontWeight: 'bold'},
   footer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 30,
+    justifyContent: 'space-around',
+    alignItems:'center',
+    marginTop:20,
+    
   },
   styletext: {marginLeft: 10, width: '65%'},
   img: {width: '100%', height: 118, borderRadius: 10},

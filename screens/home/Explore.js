@@ -67,7 +67,7 @@ const Explore = ({navigation}) => {
         </Text>
       </View>
       <ScrollView>
-        <View style={{padding: 15}}>
+        <View style={{padding: 13}}>
           {Data.map((post, index) => (
             <View key={index}>
               <View style={styles.footermap}>

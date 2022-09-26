@@ -45,7 +45,7 @@ export default Events;
 const styles = StyleSheet.create({
   container: {padding: 10},
   header: {
-    width: 300,
+    width: '100%',
     height: 125,
     borderRadius: 10,
     backgroundColor: 'white',
@@ -61,7 +61,8 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 30,
+    marginTop: 20,
+    padding: 10,
   },
   badge: {
     backgroundColor: '#fff',

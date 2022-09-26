@@ -1,4 +1,4 @@
-import {StyleSheet,} from 'react-native';
+import {StyleSheet} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import SignInScreen from './screens/SignInScreen';
@@ -31,7 +31,6 @@ const Stack = createStackNavigator();
 const screenOptions = {
   headerShown: false,
 };
-
 const Navigation = () => {
   return (
     <NavigationContainer>

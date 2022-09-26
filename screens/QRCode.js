@@ -68,7 +68,7 @@ const QRCode = ({navigation}) => {
       <View style={styles.footertext}>
         <TouchableOpacity
           onPress={() => navigation.push('TabsProfil')}
-          style={styles.bodyfooter}>
+          style={[styles.foterbutton,{backgroundColor: '#5766c7',}]}>
           <Feather name="download" size={23} color="white" />
           <View style={{marginTop: 5}}>
             <Text style={styles.footertitle}>Download Image</Text>
@@ -82,7 +82,7 @@ const QRCode = ({navigation}) => {
             color="#5766c7"
           />
           <View style={{marginTop: 5}}>
-            <Text style={styles.button}>share QR Code</Text>
+            <Text style={[styles.footertitle,{ color:"#5766c7"}]}>share QR Code</Text>
           </View>
         </TouchableOpacity>
       </View>
@@ -98,9 +98,9 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     height: 400,
     borderRadius: 20,
-    marginTop: 50,
+    marginTop: 40,
   },
-  button: {fontWeight: 'bold', color: '#5766c7', marginLeft: 4},
+ 
   footertext: {
     flexDirection: 'row',
     marginTop: 25,
@@ -109,21 +109,15 @@ const styles = StyleSheet.create({
   },
   foterbutton: {
     width: '47%',
-    height: 50,
     backgroundColor: 'white',
     borderRadius: 15,
     flexDirection: 'row',
     padding: 10,
+    alignItems:"center",
+    justifyContent:"center" 
   },
   footertitle: {fontWeight: 'bold', color: 'white'},
-  bodyfooter: {
-    width: '47%',
-    height: 50,
-    backgroundColor: '#5766c7',
-    borderRadius: 15,
-    flexDirection: 'row',
-    padding: 10,
-  },
+
   footer: {
     flexDirection: 'row',
     backgroundColor: 'white',

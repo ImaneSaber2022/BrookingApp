@@ -61,6 +61,7 @@ const HomeScreen = ({navigation}) => {
             />
           </View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+            <View style={{padding:10,flexDirection:'row'}}>
             <TouchableOpacity
               style={styles.buttontext}
               onPress={() => navigation.push('ChooseIntrest')}>
@@ -75,6 +76,7 @@ const HomeScreen = ({navigation}) => {
                 </View>
               </TouchableOpacity>
             ))}
+            </View>
           </ScrollView>
         </View>
         <View style={styles.body}>
@@ -120,7 +122,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginTop: 15,
+    padding: 10,
   },
   heaerText: {
     left: 10,
@@ -136,9 +138,9 @@ const styles = StyleSheet.create({
   iconStyle: {
     right: 10,
     borderColor: '#000',
-    width: '10%',
-    height: '100%',
-    borderRadius: 5,
+    width: '14%',
+    height: '110%',
+    borderRadius: 8,
     backgroundColor: '#f7f7f7',
   },
   unreadBadge: {
@@ -193,7 +195,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   styleBody: {
-    marginTop: 30,
+    marginTop: 20,
     alignItems: 'center',
   },
   buttontext: {
@@ -212,7 +214,8 @@ const styles = StyleSheet.create({
     marginTop: 15,
     justifyContent: 'space-between',
     marginRight: 5,
-    marginLeft: 5,
+    marginLeft:5,
+    padding: 10,
   },
   styleText: {
     color: '#fff',
@@ -222,7 +225,7 @@ const styles = StyleSheet.create({
   },
   styleButton: {
     justifyContent: 'center',
-    flex: 1,
+   flex:1,
     alignItems: 'center',
   },
   textbadge: {

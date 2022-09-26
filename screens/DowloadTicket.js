@@ -79,10 +79,13 @@ const DowloadTicket = ({navigation}) => {
           </View>
         </View>
         <View style={styles.textbody}>
-          <TouchableOpacity style={styles.icon}>
+          <TouchableOpacity
+            style={[styles.button, {backgroundColor: '#5766c7'}]}>
             <Feather name="download" size={23} color="white" />
             <View style={styles.bodericon}>
-              <Text style={styles.icontext}>Download Image</Text>
+              <Text style={[styles.buttontext, {color: 'white'}]}>
+                Download Image
+              </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  footer: {flexDirection: 'column', padding: 15},
+  footer: {flexDirection: 'column', padding: 10},
   headerText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -122,30 +125,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flex: 1,
   },
-  buttontext: {fontWeight: 'bold', color: '#5766c7', marginLeft: 4},
+  buttontext: {
+    fontWeight: 'bold',
+    color: '#5766c7',
+    marginLeft: 4,
+    fontSize: 12,
+  },
   borderbutton: {marginLeft: 2, marginTop: 5},
   button: {
     width: '46%',
-    height: 50,
     backgroundColor: 'white',
     borderRadius: 15,
     flexDirection: 'row',
-    padding: 10,
+    paddingVertical: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  icontext: {fontWeight: 'bold', color: 'white'},
   bodericon: {marginLeft: 2, marginTop: 5},
   textbody: {
     flexDirection: 'row',
     marginTop: 25,
     justifyContent: 'space-between',
-  },
-  icon: {
-    width: '46%',
-    height: 50,
-    backgroundColor: '#5766c7',
-    borderRadius: 15,
-    flexDirection: 'row',
-    padding: 10,
   },
   footerbody: {
     backgroundColor: '#efefef',
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   title: {justifyContent: 'center', alignItems: 'center', flex: 1},
   header: {
     backgroundColor: '#efefef',
-    height: 210,
+    height: 205,
     borderRadius: 15,
     padding: 12,
     borderBottomRightRadius: 20,
@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
     height: '80%',
     borderRadius: 20,
-    marginTop: 35,
+    marginTop: 25,
     elevation: 5,
     padding: 15,
   },

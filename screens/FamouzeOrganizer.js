@@ -23,15 +23,15 @@ const FamouzeOrganizer = ({navigation}) => {
           <Text>Skip for now</Text>
         </View>
       </View>
-      <View style={{padding: 15}}>
+      <View style={{padding: 12}}>
         <View>
           <Text style={styles.text}>Famouze Organizer</Text>
-          <Text style={[styles.textHeader, {marginTop: 10}]}>
+          <Text style={[styles.textHeader, {marginTop: 5}]}>
             Follow a collection your favorites interest to find
           </Text>
           <Text style={styles.textHeader}>event related to them</Text>
         </View>
-        <View style={styles.title}>
+        <View style={styles.textinputstyle}>
           <View style={styles.action}>
             <EvilIcons name="search" size={20} color={'gray'} />
             <TextInput
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 10,
   },
-  title: {alignItems: 'center', marginTop: 5},
+  textinputstyle: {alignItems: 'center', marginTop: 5},
   textHeader: {
     fontSize: 14,
     color: 'gray',
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#5766c7',
   },
-  button: {alignItems: 'center', marginTop: 8},
+  button: {alignItems: 'center'},
   footer: {
     backgroundColor: '#5766c7',
     width: '100%',
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   bodytitle: {fontSize: 15, fontWeight: 'bold'},
   action: {
     flexDirection: 'row',
-    marginTop: 5,
+   
     borderColor: '#f7f7f7',
     borderWidth: 1,
     borderRadius: 18,
@@ -157,8 +157,7 @@ const styles = StyleSheet.create({
     height: '95%',
     borderRadius: 10,
     padding: 10,
-    elevation: 8,
-    marginTop: 5,
+    elevation: 5,
     marginRight: 5,
     marginLeft: 5,
   },

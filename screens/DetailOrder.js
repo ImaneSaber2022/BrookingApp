@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TouchableOpacity,Image} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -7,154 +7,78 @@ import {Divider} from 'react-native-elements';
 import Image10 from '../assestes/images/image10.jpg';
 
 const DetailOrder = ({navigation}) => {
+  const Item = [
+    {
+      name: '1x Premium price',
+      numbr: '$35.00',
+    },
+    {
+      name: ' SubTotal',
+      numbr: '$35.00',
+    },
+    {
+      name: ' Fees',
+      numbr: '$02.11',
+    },
+  ];
   return (
     <View style={styles.container}>
-      <View
-        style={styles.header}>
+      <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={25} />
         </TouchableOpacity>
-        <TouchableOpacity style={{marginRight: 10, marginLeft: 100}}>
-          <Text style={{fontSize: 17, fontWeight: 'bold'}}>Detail Order</Text>
+        <TouchableOpacity style={styles.headercontainer}>
+          <Text style={styles.textstyle}>Detail Order</Text>
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          backgroundColor: '#fff',
-          height: 120,
-          borderRadius: 10,
-          padding: 8,
-          elevation: 10,marginTop:20,
-        }}>
+      <View style={styles.body}>
         <TouchableOpacity style={{flexDirection: 'row'}}>
           <View>
-            <Image
-              source={Image1}
-              style={{width: 80, height: 100, borderRadius: 5}}
-            />
+            <Image source={Image1} style={styles.img} />
           </View>
           <View style={{padding: 5}}>
-            <Text style={{fontSize: 15, fontWeight: 'bold'}}>
-              Startup Business Events for
-            </Text>
-            <Text style={{fontSize: 15, fontWeight: 'bold'}}>
-              Business starters 2022
-            </Text>
+            <Text style={styles.title}>Startup Business Events for</Text>
+            <Text style={styles.title}>Business starters 2022</Text>
 
-            <View style={{flexDirection: 'row', marginTop: 10}}>
+            <View style={styles.rowone}>
               <AntDesign name="calendar" size={18} color="gray" />
-              <Text style={{marginLeft: 5, color: 'gray', fontSize: 13}}>
-                March 29,2022
-              </Text>
+              <Text style={styles.texticon}>March 29,2022</Text>
             </View>
-            <View style={{flexDirection: 'row', marginTop: 4}}>
+            <View style={styles.rowtwo}>
               <Ionicons name="time-outline" size={18} color="gray" />
-              <Text style={{marginLeft: 5, fontSize: 13}}>10.00PM 12.00PM</Text>
+              <Text style={styles.textrowtwo}>10.00PM 12.00PM</Text>
             </View>
           </View>
         </TouchableOpacity>
       </View>
       <View style={{marginTop: 15}}>
-        <Text style={{fontWeight: 'bold', fontSize: 16}}>Order Summary</Text>
+        <Text style={styles.styletextorder}>Order Summary</Text>
       </View>
-      <View
-        style={{
-          marginTop: 15,
-          height: 360,
-          borderRadius: 10,
-          padding: 5,
-          backgroundColor: 'white',
-        }}>
-        <View
-          style={{
-            backgroundColor: 'white',
-            height: 200,
-            borderRadius: 10,
-            elevation: 10,
-            borderWidth: 1,
-            borderColor: '#f7f7f7',
-            padding: 10,
-          }}>
-          {/* row1 */}
-          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <View>
-              <Text style={{fontSize: 12, color: 'gray', fontWeight: 'bold'}}>
-                1x Premium price
-              </Text>
+      <View style={styles.bodytwo}>
+        <View style={styles.bodytwotext}>
+          {Item.map((dt, index) => (
+            <View style={styles.rowthree} key={index}>
+              <View>
+                <Text style={styles.textpremium}>{dt.name}</Text>
+              </View>
+              <View>
+                <Text style={styles.textstyletwo}>{dt.numbr}</Text>
+              </View>
             </View>
-            <View>
-              <Text style={{fontSize: 15, color: '#000', fontWeight: 'bold'}}>
-                $35.00
-              </Text>
-            </View>
-          </View>
-          {/* end row1 */}
-          {/* row2 */}
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 15,
-            }}>
-            <View>
-              <Text style={{fontSize: 12, color: 'gray', fontWeight: 'bold'}}>
-                SubTotal
-              </Text>
-            </View>
-            <View>
-              <Text style={{fontSize: 15, fontWeight: '600'}}>$35.00</Text>
-            </View>
-          </View>
-
-          {/* end row2 */}
-          {/* row3 */}
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 15,
-            }}>
-            <View style={{flexDirection: 'row'}}>
-              <Text style={{fontSize: 12, color: 'gray', fontWeight: 'bold'}}>
-                Fees
-              </Text>
-              <AntDesign
-                name="exclamationcircleo"
-                size={16}
-                style={{marginLeft: 5}}
-                color="gray"
-              />
-            </View>
-            <View>
-              <Text style={{fontSize: 15, fontWeight: '500'}}>$02.11</Text>
-            </View>
-          </View>
-
-          {/* end row3 */}
+          ))}
           {/* driver */}
-          <View style={{marginTop: 20, width: '100%'}}>
+          <View style={styles.styleDiver}>
             <Divider width={1} orientation="horizontal" color="#eceeff" />
           </View>
           {/* end driver */}
-
-          {/* row4 */}
-
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 15,
-            }}>
+          <View style={styles.bodydiver}>
             <View>
-              <Text style={{fontSize: 12, color: 'gray', fontWeight: 'bold'}}>
-                Total
-              </Text>
+              <Text style={styles.styletextdiverone}>Total</Text>
             </View>
             <View>
-              <Text style={{fontSize: 18, fontWeight: '600'}}>$77.11</Text>
+              <Text style={styles.styledivertwo}>$82.11</Text>
             </View>
           </View>
-          {/* end row4 */}
         </View>
         <View
           style={{
@@ -167,7 +91,9 @@ const DetailOrder = ({navigation}) => {
               Payement Method
             </Text>
           </View>
-          <TouchableOpacity style={{flexDirection: 'row'}} onPress={() => navigation.goBack()}>
+          <TouchableOpacity
+            style={{flexDirection: 'row'}}
+            onPress={() => navigation.goBack()}>
             <View>
               <Text style={{color: '#5766c7', fontWeight: '600'}}>Change</Text>
             </View>
@@ -223,51 +149,17 @@ const DetailOrder = ({navigation}) => {
           </View>
         </TouchableOpacity>
       </View>
-      <View
-        style={{
-          backgroundColor: 'white',
-          marginTop: 30,
-          height: 80,
-          borderRadius: 10,
-          borderWidth: 1,
-          borderColor: '#f7f7f7',
-          padding: 10,
-        }}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flex: 1,
-          }}>
+      <View style={styles.footer}>
+        <View style={styles.footerbody}>
           <View>
             <Text style={{fontSize: 15, fontWeight: 'bold'}}>$37.11</Text>
-            <Text
-              style={{
-                fontSize: 12,
-                color: 'gray',
-                fontWeight: 'bold',
-                marginTop: 5,
-              }}>
-              You're goingl +1
-            </Text>
+            <Text style={styles.footerbodytext}>You're goingl +1</Text>
           </View>
-          <TouchableOpacity onPress={() => navigation.push('ContactInformation')}
-            style={{
-              width: 120,
-              height: 50,
-              borderRadius: 10,
-              backgroundColor: '#5766c7',
-            }}>
-            <View
-              style={{
-                justifyContent: 'center',
-                alignItems: 'center',
-                flex: 1,
-              }}>
-              <Text style={{color: '#fff', fontWeight: 'bold'}}>
-                Place Order
-              </Text>
+          <TouchableOpacity
+            onPress={() => navigation.push('ContactInformation')}
+            style={styles.footertext}>
+            <View style={styles.button}>
+              <Text style={styles.buttontext}>Place Order</Text>
             </View>
           </TouchableOpacity>
         </View>
@@ -283,8 +175,89 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 12,
   },
-  header:{
+  styleDiver: {marginTop: 20, width: '100%'},
+  title: {fontSize: 15, fontWeight: 'bold'},
+  textstyle: {fontSize: 17, fontWeight: 'bold'},
+  headercontainer: {alignItems: 'center', flex: 1},
+  header: {
     flexDirection: 'row',
     padding: 5,
+  },
+  buttontext: {color: '#fff', fontWeight: 'bold'},
+  button: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 1,
+  },
+  footertext: {
+    width: 120,
+    height: 50,
+    borderRadius: 10,
+    backgroundColor: '#5766c7',
+  },
+  footer: {
+    backgroundColor: 'white',
+    marginTop: 15,
+    height: 80,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#f7f7f7',
+    padding: 10,
+  },
+  textrowtwo: {marginLeft: 5, fontSize: 13},
+  body: {
+    backgroundColor: '#fff',
+    height: 120,
+    borderRadius: 10,
+    padding: 8,
+    elevation: 5,
+    marginTop: 10,
+  },
+  footerbodytext: {
+    fontSize: 12,
+    color: 'gray',
+    fontWeight: 'bold',
+    marginTop: 5,
+  },
+  footerbody: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: 1,
+  },
+  styletextdiverone: {fontSize: 16, color: 'gray', fontWeight: 'bold'},
+  bodydiver: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 15,
+  },
+  rowthree: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  styletextorder: {fontWeight: 'bold', fontSize: 16},
+  rowone: {flexDirection: 'row', marginTop: 10},
+  img: {width: 80, height: 100, borderRadius: 5},
+  texticon: {marginLeft: 5, color: 'gray', fontSize: 13},
+  rowtwo: {flexDirection: 'row', marginTop: 4},
+  bodytwo: {
+    marginTop: 20,
+    height: 360,
+    borderRadius: 10,
+    padding: 15,
+    backgroundColor: 'white',
+  },
+  styledivertwo: {fontSize: 18, fontWeight: '600'},
+  textstyletwo: {fontSize: 15, color: '#000', fontWeight: 'bold'},
+  textpremium: {fontSize: 12, color: 'gray', fontWeight: 'bold'},
+  bodytwotext: {
+    backgroundColor: 'white',
+    height: 200,
+    borderRadius: 10,
+    elevation: 10,
+    borderWidth: 1,
+    borderColor: '#f7f7f7',
+    padding: 10,
   },
 });

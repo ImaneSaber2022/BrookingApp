@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -8,88 +8,68 @@ const Payements = ({navigation}) => {
     {
       id: 0,
       btnRadioff: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-off'}
-          size={18}
-          color="#5766c7"
-        />
+        <Ionicons name={'radio-button-off'} size={18} color="#5766c7" />
       ),
       btnRadioon: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-on'}
-          size={18}
-          color="#5766c7"
-        />
+        <Ionicons name={'radio-button-on'} size={18} color="#5766c7" />
       ),
       name: ' credit Cards',
       text: 'Visa',
-      imgUrl: require('../assestes/images/image9.jpg'),
+      imgUrl: (
+        <Image
+          source={require('../assestes/images/logovisa.png')}
+          style={{width: 60, height: 20}}
+        />
+      ),
     },
     {
       id: 1,
       btnRadioff: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-off'}
-          size={18}
-          color="#5766c7"
-        />
+        <Ionicons name={'radio-button-off'} size={18} color="#5766c7" />
       ),
       btnRadioon: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-on'}
-          size={18}
-          color="#5766c7"
+        <Ionicons name={'radio-button-on'} size={18} color="#5766c7" />
+      ),
+      name: 'Apple Pay',
+      text: 'pay',
+      imgUrl: (
+        <Image
+          source={require('../assestes/images/logoapplepay.png')}
+          style={{width: 50, height: 20}}
         />
       ),
-      name: ' credit Cards',
-      text: 'pay',
-      imgUrl: require('../assestes/images/logoApple.jpg'),
     },
     {
       id: 2,
       btnRadioff: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-off'}
-          size={18}
-          color="#5766c7"
-        />
+        <Ionicons name={'radio-button-off'} size={18} color="#5766c7" />
       ),
       btnRadioon: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-on'}
-          size={18}
-          color="#5766c7"
+        <Ionicons name={'radio-button-on'} size={18} color="#5766c7" />
+      ),
+      name: 'Paypal',
+      imgUrl: (
+        <Image
+          source={require('../assestes/images/logoPaypal.png')}
+          style={{width: 25, height: 25}}
         />
       ),
-      name: ' credit Cards',
-      imgUrl: require('../assestes/images/image10.jpg'),
     },
     {
       id: 3,
       btnRadioff: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-off'}
-          size={18}
-          color="#5766c7"
-        />
+        <Ionicons name={'radio-button-off'} size={18} color="#5766c7" />
       ),
       btnRadioon: (
-        <Ionicons
-          style={{marginTop: 19}}
-          name={'radio-button-on'}
-          size={18}
-          color="#5766c7"
+        <Ionicons name={'radio-button-on'} size={18} color="#5766c7" />
+      ),
+      name: 'Payoneer',
+      imgUrl: (
+        <Image
+          source={require('../assestes/images/pyonerlogo.png')}
+          style={{width: 60, height: 20}}
         />
       ),
-      name: ' credit Cards',
-      imgUrl: require('../assestes/images/pyonerlogo.png'),
     },
   ];
   const [show, setShow] = useState(null);
@@ -108,42 +88,44 @@ const Payements = ({navigation}) => {
           </View>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.bodytext}>
-        <View style={styles.bodyfooter}>
-          <Text style={styles.styletext}>one Click payement</Text>
-          <AntDesign
-            name="arrowright"
-            size={25}
-            color={'#5766c7'}
-            style={{padding: 16}}
-          />
+      <View style={{padding: 20}}>
+        <TouchableOpacity style={styles.bodytext}>
+          <View style={styles.bodyfooter}>
+            <Text style={styles.styletext}>one Click payement</Text>
+            <AntDesign
+              name="arrowright"
+              size={25}
+              color={'#5766c7'}
+              style={{padding: 16}}
+            />
+          </View>
+        </TouchableOpacity>
+        <View style={styles.Or}>
+          <View style={styles.bodyOr} />
+          <View style={{marginTop: 15}}>
+            <Text>Or</Text>
+          </View>
+          <View style={styles.textOr} />
         </View>
-      </TouchableOpacity>
-      <View style={styles.Or}>
-        <View style={styles.bodyOr} />
-        <View style={{marginTop: 15}}>
-          <Text>Or</Text>
+        <View style={{marginTop: 10}}>
+          {data.map((v, index) => (
+            <PayementSelect
+              v={v}
+              index={index}
+              key={index}
+              show={show == v.id}
+              onClick={() => setShow(v.id)}
+            />
+          ))}
         </View>
-        <View style={styles.textOr} />
+        <TouchableOpacity
+          style={styles.borderbutton}
+          onPress={() => navigation.push('DetailOrder')}>
+          <View style={styles.bottonbody}>
+            <Text style={styles.buttontext}>Confirme</Text>
+          </View>
+        </TouchableOpacity>
       </View>
-      <View style={{marginTop: 10}}>
-        {data.map((v, index) => (
-          <PayementSelect
-            v={v}
-            index={index}
-            key={index}
-            show={show == v.id}
-            onClick={() => setShow(v.id)}
-          />
-        ))}
-      </View>
-      <TouchableOpacity
-        style={styles.borderbutton}
-        onPress={() => navigation.push('DetailOrder')}>
-        <View style={styles.bottonbody}>
-          <Text style={styles.buttontext}>Confirme</Text>
-        </View>
-      </TouchableOpacity>
     </View>
   );
 };
@@ -154,9 +136,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    padding: 20,
   },
-  header: {flexDirection: 'row', justifyContent: 'space-between', padding: 10},
+  header: {flexDirection: 'row', justifyContent: 'space-between',padding:15},
   text: {fontSize: 17, fontWeight: 'bold'},
   body: {
     width: 25,
@@ -196,7 +177,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#5766c7',
     borderRadius: 12,
     height: 50,
-    marginTop: 100,
+    marginTop: 50,
   },
   bottonbody: {justifyContent: 'center', alignItems: 'center', flex: 1},
   buttontext: {color: 'white', fontSize: 15, fontWeight: 'bold'},

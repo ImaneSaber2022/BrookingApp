@@ -11,8 +11,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import {Divider} from 'react-native-elements';
 import FiltersContent from '../components/home/FiltersContent';
+import {Calendar} from 'react-native-calendars';
 const Filters = ({navigation}) => {
   const [show, setShow] = useState(null);
+  const [modal, setModal] = useState(false);
   const Items = [
     {
       id: 0,
@@ -49,10 +51,10 @@ const Filters = ({navigation}) => {
           <Text style={styles.text}>Filters</Text>
         </TouchableOpacity>
       </View>
-      <View style={{marginTop: 10}}>
+      <View style={{marginTop: 5}}>
         <Divider width={1} orientation="horizontal" color="#eceeff" />
       </View>
-      <View style={{padding: 20}}>
+      <View style={{padding: 18}}>
         <View>
           <Text style={styles.fotrttext}>Dates</Text>
         </View>
@@ -63,7 +65,7 @@ const Filters = ({navigation}) => {
               placeholderTextColor={'#000'}
               style={styles.rowtext}
             />
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => setModal(!modal)}>
               <AntDesign
                 name="calendar"
                 size={20}
@@ -72,7 +74,9 @@ const Filters = ({navigation}) => {
               />
             </TouchableOpacity>
           </View>
+         
         </View>
+        {modal && <Calendar />}
         <View style={styles.headerbody}>
           <View>
             <Text style={styles.iconheader}>Categories</Text>
@@ -140,7 +144,7 @@ const styles = StyleSheet.create({
   },
   buutoonstyle: {color: 'white', fontSize: 15, fontWeight: 'bold'},
   button: {justifyContent: 'center', alignItems: 'center', flex: 1},
-  headertext: {marginRight: 10, marginLeft: 100},
+  headertext: {alignItems:'center',flex:1},
   text: {fontSize: 17, fontWeight: 'bold'},
   fotrttext: {fontWeight: 'bold', fontSize: 15},
   body: {

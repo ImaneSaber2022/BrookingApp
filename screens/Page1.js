@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   footer: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 15,
+    marginBottom: 25
   },
 
   borderText: {marginTop: 30},

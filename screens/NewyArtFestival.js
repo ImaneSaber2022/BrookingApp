@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -7,8 +7,10 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Image1 from '../assestes/images/image1.png';
 import {Divider} from 'react-native-elements';
+import {Calendar} from 'react-native-calendars';
 
 const NewyArtFestival = ({navigation}) => {
+  const [show, setShow] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -24,7 +26,7 @@ const NewyArtFestival = ({navigation}) => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={{marginTop: 10}}>
+      <View>
         <Divider width={1} orientation="horizontal" color="#eceeff" />
       </View>
       <View style={{padding: 20}}>
@@ -59,7 +61,7 @@ const NewyArtFestival = ({navigation}) => {
               <Text style={styles.textbody}>09:00 PM-End</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.body}>
+          <TouchableOpacity style={styles.body} onPress={() => setShow(!show)}>
             <View style={styles.row}>
               <MaterialCommunityIcons
                 name="calendar-clock-outline"
@@ -69,6 +71,7 @@ const NewyArtFestival = ({navigation}) => {
             </View>
           </TouchableOpacity>
         </View>
+        {show && <Calendar />}
         <View style={{marginTop: 15}}>
           <Text style={styles.styletext}>Abouts this Events</Text>
           <Text style={styles.paragraph}>
@@ -146,12 +149,12 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginLeft: 3,
   },
-  img: {width: 320, height: 250, borderRadius: 10},
+  img: {width: 320, height: 220, borderRadius: 10},
   icon: {flexDirection: 'row', padding: 5},
   badge: {
     backgroundColor: '#000',
     position: 'absolute',
-    top: 190,
+    top: 165,
     marginLeft: 15,
     width: 135,
     height: 38,

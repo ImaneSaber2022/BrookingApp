@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
   body: {
     alignItems: 'center',
     justifyContent: 'center',
-    marginBottom: 15,
+    marginBottom: 25,
   },
   borderText: {marginTop: 30},
   imgs: {

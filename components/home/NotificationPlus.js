@@ -1,7 +1,5 @@
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const NotificationPlus = ({item, index}) => {
   const [show, setShow] = useState(true);
