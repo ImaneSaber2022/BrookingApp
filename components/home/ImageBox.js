@@ -48,9 +48,9 @@ const ImageBox = ({navigation}) => {
 export default ImageBox;
 
 const styles = StyleSheet.create({
-  header: {marginTop: 15, width: 250, left: 10, height: 270, marginRight: 10,padding:10},
+  header: {marginTop: 15, width: 250, left: 5, height: 270, marginRight: 5,padding:8},
   headertext: {
-    height: 270,
+    height: 250,
     borderRadius: 20,
   },
   imgs: {
