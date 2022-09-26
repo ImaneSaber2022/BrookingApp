@@ -27,7 +27,7 @@ const DowloadTicket = ({navigation}) => {
           <View style={styles.styleImg}>
             <Image source={Image1} style={styles.img} />
           </View>
-          <View style={{padding: 20}}>
+          <View style={{padding: 10}}>
             <View style={styles.header}>
               <View>
                 <Text style={styles.styletext}>
@@ -195,8 +195,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#f8f8f8',
     height: '80%',
     borderRadius: 20,
-    marginTop: 25,
+    marginTop: 20,
     elevation: 5,
-    padding: 15,
+    padding: 12,
   },
 });

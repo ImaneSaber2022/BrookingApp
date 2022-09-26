@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   iconStyle: {
-    right: 10,
+    right: 4,
     borderColor: '#000',
     width: '14%',
     height: '110%',
