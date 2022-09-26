@@ -25,10 +25,10 @@ const HomeScreen = ({navigation}) => {
       name: 'Technology',
     },
     {
-      name: 'Sports& Fitnesss',
+      name: 'Sports',
     },
     {
-      name: 'Personal developpement',
+      name: 'Fitness',
     },
   ];
   return (
