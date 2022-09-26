@@ -26,8 +26,8 @@ const Language = ({navigation}) => {
     },
     {
       id: 2,
-      imgurl: require('../assestes/images/logofranse.jpg'),
-      name: 'France(GBR)',
+      imgurl: require('../assestes/images/francelogo.png'),
+      name: 'France',
       ico: <AntDesign name="checkcircleo" size={20} color="lightgreen" />,
     },
     {
@@ -38,7 +38,7 @@ const Language = ({navigation}) => {
     },
     {
       id: 4,
-      imgurl: require('../assestes/images/logoitalien.jpg'),
+      imgurl: require('../assestes/images/italylogo.png'),
       name: 'Italy(IT)',
       ico: <AntDesign name="checkcircleo" size={20} color="lightgreen" />,
     },
