@@ -41,8 +41,8 @@ const Collections = () => {
 export default Collections;
 
 const styles = StyleSheet.create({
-  container: {flex: 1},
-  header: {height: 310},
+  container: {backgroundColor: 'white', flex: 1},
+  header: {height: 300,padding:5},
   img: {width: '100%', height: '46%', borderRadius: 12},
   text: {fontSize: 15, fontWeight: 'bold'},
   body: {
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     width: '100%',
     height: 45,
-    marginTop: 20,
+    marginTop: 10,
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#5766c7',
@@ -68,7 +68,6 @@ const styles = StyleSheet.create({
   textbody: {
     fontSize: 13,
     fontWeight: 'bold',
-
     marginTop: 5,
   },
   imageView: {
@@ -77,7 +76,8 @@ const styles = StyleSheet.create({
     height: '95%',
     borderRadius: 10,
     padding: 10,
-    elevation: 8,
+    borderWidth: 1,
+    borderColor: '#eceeff',
     marginTop: 5,
     marginRight: 5,
     marginLeft: 5,

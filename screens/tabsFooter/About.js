@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
   return (
-    <View>
+    <View style={{padding:10,backgroundColor:'white',flex:1}}>
       <Text>About</Text>
     </View>
   )

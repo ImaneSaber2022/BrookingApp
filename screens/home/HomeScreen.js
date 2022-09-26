@@ -15,6 +15,7 @@ import {Divider} from 'react-native-elements';
 import ImagesContent from '../../components/home/ImagesContent';
 const HomeScreen = ({navigation}) => {
   const data = [
+    
     {
       name: 'Concerts',
     },

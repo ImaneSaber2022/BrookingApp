@@ -5,7 +5,7 @@ import {DataProfil} from '../../data/Data';
 import {ScrollView} from 'react-native';
 const Events = () => {
   return (
-    <ScrollView>
+    <ScrollView showsVerticalScrollIndicator={false}>
       {DataProfil.map((post, index) => (
         <View key={index} style={styles.container}>
           <View style={styles.header}>
@@ -43,7 +43,7 @@ const Events = () => {
 export default Events;
 
 const styles = StyleSheet.create({
-  container: {padding: 10},
+  container: {padding: 10,backgroundColor:'white'},
   header: {
     width: '100%',
     height: 125,
@@ -52,6 +52,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
     marginTop: 10,
+    borderColor:'#eceeff',
+    borderWidth:1,
   },
   bodytext: {fontWeight: 'bold'},
   body: {marginLeft: 10, width: '65%'},
