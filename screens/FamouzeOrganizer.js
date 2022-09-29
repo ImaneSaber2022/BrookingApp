@@ -4,15 +4,15 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  Image,
+  Image,ScrollView
 } from 'react-native';
-import React from 'react';
+import React,{useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {Posts} from '../data/Data';
-import {ScrollView} from 'react-native';
 const FamouzeOrganizer = ({navigation}) => {
+  const [show, setShow] = useState();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -57,11 +57,20 @@ const FamouzeOrganizer = ({navigation}) => {
                   <Ionicons name="location" size={20} color={'gray'} />
                   <Text style={styles.footertext}>{post.textone}</Text>
                 </View>
-                <TouchableOpacity style={styles.body}>
-                  <View style={styles.bodyfooter}>
-                    <Text style={{color: '#5766c7'}}>{post.texttwo}</Text>
-                  </View>
-                </TouchableOpacity>
+                {show ? (
+                  <TouchableOpacity style={styles.body} onPress={()=> setShow(false)}>
+                    <View style={styles.bodyfooter}>
+                      <Text style={{color: '#5766c7'}}>{post.texttwo}</Text>
+                    </View>
+                  </TouchableOpacity>
+                ) : (
+                  <TouchableOpacity onPress={()=> setShow(!show)}
+                   style={[styles.body,{backgroundColor: '#5766c7',}]}>
+                    <View style={styles.bodyfooter}>
+                      <Text style={{color: 'white'}}>{post.texttwo}</Text>
+                    </View>
+                  </TouchableOpacity>
+                )}
               </View>
             ))}
           </ScrollView>
@@ -132,7 +141,7 @@ const styles = StyleSheet.create({
   bodytitle: {fontSize: 15, fontWeight: 'bold'},
   action: {
     flexDirection: 'row',
-   
+
     borderColor: '#f7f7f7',
     borderWidth: 1,
     borderRadius: 18,
