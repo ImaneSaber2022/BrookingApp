@@ -8,7 +8,7 @@ const ImagesContent = ({navigation}) => {
     <>
       {Data.map((post, index) => (
         <View key={index} style={styles.container}>
-          <View style={styles.header}>
+          <TouchableOpacity style={styles.header}>
             <View style={{width: '35%'}}>
               <View style={styles.badge}>
                 <Text style={{fontWeight: 'bold'}}>{post.numberone}</Text>
@@ -33,7 +33,7 @@ const ImagesContent = ({navigation}) => {
                 </TouchableOpacity>
               </View>
             </View>
-          </View>
+          </TouchableOpacity>
         </View>
       ))}
     </>

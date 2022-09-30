@@ -27,6 +27,7 @@ import QRCode from './screens/QRCode';
 import TabsFooter from './screens/tabsFooter/TabsFooter';
 import Notification from './screens/Notification';
 import Language from './screens/Language';
+import HomeContent from './components/home/HomeContent';
 const Stack = createStackNavigator();
 const screenOptions = {
   headerShown: false,
@@ -39,6 +40,7 @@ const Navigation = () => {
         screenOptions={screenOptions}>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="BadgeTicket" component={BadgeTicket} />
+        <Stack.Screen name="HomeContent" component={HomeContent} />
         <Stack.Screen name="Language" component={Language} />
         <Stack.Screen name="TabsFooter" component={TabsFooter} />
         <Stack.Screen name="Notification" component={Notification} />

@@ -4,15 +4,52 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  Image,ScrollView
+  Image,
+  ScrollView,
 } from 'react-native';
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {Posts} from '../data/Data';
+import FamozContent from '../components/home/FamozContent';
 const FamouzeOrganizer = ({navigation}) => {
-  const [show, setShow] = useState();
+  const Posts = [
+    {
+      imgUrl: require('../assestes/images/image1.png'),
+
+      titleone: 'Relax Tapy Tour',
+      titletwo: 'By Angeria',
+      textone: 'california, USA',
+      texttwo: 'Follow',
+      textthree: 'Following',
+    },
+    {
+      imgUrl: require('../assestes/images/image2.png'),
+
+      titleone: 'Dance part Tour',
+      titletwo: 'By Angeria',
+      textone: 'New york',
+      texttwo: 'Follow',
+      textthree: 'Following',
+    },
+    {
+      imgUrl: require('../assestes/images/image4.jpg'),
+      titleone: 'Relax Tapy Tour',
+      titletwo: 'By Angeria',
+      textone: 'New york',
+      texttwo: 'Follow',
+      textthree: 'Following',
+    },
+    {
+      imgUrl: require('../assestes/images/image5.jpg'),
+      titleone: 'Relax Tapy Tour',
+      titletwo: 'By Angeria',
+      textone: 'New york',
+      texttwo: 'Follow',
+      textthree: 'Following',
+    },
+  ];
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -47,31 +84,7 @@ const FamouzeOrganizer = ({navigation}) => {
         <View style={styles.bodytext}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             {Posts.map((post, index) => (
-              <View key={index} style={styles.imageView}>
-                <Image source={post.imgUrl} style={styles.img} />
-                <View style={{margin: 10}}>
-                  <Text style={styles.bodytitle}>{post.titleone}</Text>
-                  <Text style={styles.bodystyle}>{post.titletwo}</Text>
-                </View>
-                <View style={{flexDirection: 'row'}}>
-                  <Ionicons name="location" size={20} color={'gray'} />
-                  <Text style={styles.footertext}>{post.textone}</Text>
-                </View>
-                {show ? (
-                  <TouchableOpacity style={styles.body} onPress={()=> setShow(false)}>
-                    <View style={styles.bodyfooter}>
-                      <Text style={{color: '#5766c7'}}>{post.texttwo}</Text>
-                    </View>
-                  </TouchableOpacity>
-                ) : (
-                  <TouchableOpacity onPress={()=> setShow(!show)}
-                   style={[styles.body,{backgroundColor: '#5766c7',}]}>
-                    <View style={styles.bodyfooter}>
-                      <Text style={{color: 'white'}}>{post.texttwo}</Text>
-                    </View>
-                  </TouchableOpacity>
-                )}
-              </View>
+              <FamozContent post={post} index={index} key={index} />
             ))}
           </ScrollView>
         </View>

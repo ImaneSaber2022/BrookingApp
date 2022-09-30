@@ -13,6 +13,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import ImageBox from '../../components/home/ImageBox';
 import {Divider} from 'react-native-elements';
 import ImagesContent from '../../components/home/ImagesContent';
+import HomeContent from '../../components/home/HomeContent';
 const HomeScreen = ({navigation}) => {
   const data = [
     
@@ -62,21 +63,17 @@ const HomeScreen = ({navigation}) => {
             />
           </View>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View style={{padding:10,flexDirection:'row'}}>
+            <View style={{padding: 10, flexDirection: 'row'}}>
             <TouchableOpacity
-              style={styles.buttontext}
-              onPress={() => navigation.push('ChooseIntrest')}>
-              <View style={styles.styleButton}>
-                <Text style={styles.styleText}>My Feed</Text>
-              </View>
-            </TouchableOpacity>
-            {data.map((dt, index) => (
-              <TouchableOpacity key={index} style={styles.buttontexte}>
+                style={styles.buttontext}
+                onPress={() => navigation.push('ChooseIntrest')}>
                 <View style={styles.styleButton}>
-                  <Text style={styles.styleTexte}>{dt.name}</Text>
+                  <Text style={styles.styleText}>My Feed</Text>
                 </View>
               </TouchableOpacity>
-            ))}
+              {data.map((dtt, index) => (
+                <HomeContent dtt={dtt} index={index} key={index} />
+              ))}
             </View>
           </ScrollView>
         </View>
@@ -215,7 +212,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
     justifyContent: 'space-between',
     marginRight: 5,
-    marginLeft:5,
+    marginLeft: 5,
     padding: 10,
   },
   styleText: {
@@ -226,7 +223,7 @@ const styles = StyleSheet.create({
   },
   styleButton: {
     justifyContent: 'center',
-   flex:1,
+    flex: 1,
     alignItems: 'center',
   },
   textbadge: {
