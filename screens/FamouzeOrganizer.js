@@ -4,13 +4,12 @@ import {
   View,
   TouchableOpacity,
   TextInput,
-  Image,
   ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import FamozContent from '../components/home/FamozContent';
 const FamouzeOrganizer = ({navigation}) => {
   const Posts = [

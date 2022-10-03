@@ -13,7 +13,7 @@ import {TICKET} from '../../data/Data';
 import {Calendar} from 'react-native-calendars';
 const Ticky = ({navigation}) => {
   const [show, setShow] = useState(true);
-  const [modal, setModal]= useState(false)
+  const [modal, setModal] = useState(false);
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -45,7 +45,6 @@ const Ticky = ({navigation}) => {
                 <Entypo name="chevron-small-right" size={20} color="gray" />
               </View>
             </TouchableOpacity>
-            
           </View>
           <TouchableOpacity onPress={() => setModal(!modal)}>
             <AntDesign name="calendar" size={20} color={'gray'} />
@@ -78,7 +77,6 @@ const Ticky = ({navigation}) => {
                   <Text style={{color: 'white'}}>Upcomming</Text>
                 </View>
               </TouchableOpacity>
-
               <TouchableOpacity
                 onPress={() => setShow(false)}
                 style={styles.bodyupcomingfooter}>
@@ -106,7 +104,6 @@ const Ticky = ({navigation}) => {
                   <Text style={{color: 'gray'}}>Upcomming</Text>
                 </View>
               </TouchableOpacity>
-
               <TouchableOpacity
                 onPress={() => setShow(false)}
                 style={{
@@ -147,7 +144,6 @@ const Ticky = ({navigation}) => {
                 </View>
               </TouchableOpacity>
             </View>
-
             <View style={styles.time}>
               <View>
                 <View style={{flexDirection: 'row'}}>
@@ -176,7 +172,7 @@ const Ticky = ({navigation}) => {
               </View>
             </View>
 
-            <View style={[styles.footer,{marginTop:10}]}>
+            <View style={[styles.footer, {marginTop: 10}]}>
               <View style={{}}>
                 <Text style={styles.footertext}>
                   Classical 70's Classic Music
@@ -266,7 +262,7 @@ const Ticky = ({navigation}) => {
               </View>
             </View>
 
-            <View style={[styles.time,{marginTop:10}]}>
+            <View style={[styles.time, {marginTop: 10}]}>
               <View>
                 <Text style={styles.footertext}>
                   California Park Coffee Lover for

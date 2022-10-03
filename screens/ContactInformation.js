@@ -194,6 +194,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#eceeff',
     borderRadius: 15,
+    marginTop: 10,
   },
   header: {padding: 15},
   footercontentbody: {
